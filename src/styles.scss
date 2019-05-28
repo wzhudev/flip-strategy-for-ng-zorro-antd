@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@silicic/share-styles/dist/index.css";
+
+.slick-active {
+  .dot {
+    background-color: #999;
+  }
+}
+
+.dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #333;
+}
+

@@ -27,7 +27,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ng-zorro-antd/style/entry.less",
+              "node_modules/ng-zorro-antd/carousel/style/entry.less"
             ],
             "scripts": [],
             "es5BrowserSupport": true
