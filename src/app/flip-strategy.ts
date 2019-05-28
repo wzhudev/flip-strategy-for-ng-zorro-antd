@@ -47,10 +47,8 @@ export class FlipStrategy extends NzCarouselBaseStrategy {
     }
   }
 
-  switch(f_: number, t_: number): Observable<void> {
-    console.log(f_, t_);
-
-    const { from, to } = this.getFromToInBoundary(f_, t_);
+  switch(rawF: number, rawT: number): Observable<void> {
+    const { from, to } = this.getFromToInBoundary(rawF, rawT);
     const complete$ = new Subject<void>();
     const speed = this.carouselComponent.nzTransitionSpeed;
 
@@ -59,7 +57,7 @@ export class FlipStrategy extends NzCarouselBaseStrategy {
       complete$.complete();
     });
 
-    if (f_ === t_) {
+    if (rawF === rawT) {
       return complete$;
     }
 
@@ -72,10 +70,6 @@ export class FlipStrategy extends NzCarouselBaseStrategy {
     });
 
     return complete$;
-  }
-
-  dragging(): void {
-    console.log('d');
   }
 
   dispose(): void {
