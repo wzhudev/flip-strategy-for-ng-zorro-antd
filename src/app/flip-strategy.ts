@@ -12,8 +12,12 @@ export class FlipStrategy extends NzCarouselBaseStrategy {
     super.withCarouselContents(contents);
 
     if (this.contents) {
-      this.slickListEl.style.width = `${this.unitWidth}px`;
-      this.slickTrackEl.style.width = `${this.length * this.unitWidth}px`;
+      this.renderer.setStyle(this.slickListEl, 'width', `${this.unitWidth}px`);
+      this.renderer.setStyle(
+        this.slickTrackEl,
+        'width',
+        `${this.length * this.unitWidth}px`
+      );
 
       this.contents.forEach(
         (content: NzCarouselContentDirective, i: number) => {
@@ -69,12 +73,14 @@ export class FlipStrategy extends NzCarouselBaseStrategy {
       }
     });
 
-    return complete$;
+    return complete$.asObservable();
   }
 
   dispose(): void {
     this.contents.forEach((content: NzCarouselContentDirective) => {
       this.renderer.setStyle(content.el, 'transition', null);
+      this.renderer.setStyle(content.el, 'transform-style', null);
+      this.renderer.setStyle(content.el, 'backface-visibility', null);
     });
 
     super.dispose();
