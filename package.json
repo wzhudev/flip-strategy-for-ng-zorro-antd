@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@silicic/share-styles": "^0.0.1",
-    "ng-zorro-antd": "file:../../OSS/ng-zorro-antd/publish/ng-zorro-antd-7.4.1.tgz",
+    "ng-zorro-antd": "^7.5.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
